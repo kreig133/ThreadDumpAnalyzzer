@@ -1,0 +1,113 @@
+2015-04-05 20:18:11
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.40-b25 mixed mode):
+
+"Attach Listener" #28 daemon prio=9 os_prio=31 tid=0x00007fce0d814000 nid=0x2f0f waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Service Thread" #8 daemon prio=9 os_prio=31 tid=0x00007fce0b029000 nid=0x4703 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C1 CompilerThread2" #7 daemon prio=9 os_prio=31 tid=0x00007fce0c00b800 nid=0x4503 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" #6 daemon prio=9 os_prio=31 tid=0x00007fce0b832000 nid=0x4303 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #5 daemon prio=9 os_prio=31 tid=0x00007fce0b86e000 nid=0x4103 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=31 tid=0x00007fce0b831000 nid=0x3417 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" #3 daemon prio=8 os_prio=31 tid=0x00007fce0b84c800 nid=0x2d03 in Object.wait() [0x0000000119a1a000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000076002b2d0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	- locked <0x000000076002b2d0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+"Reference Handler" #2 daemon prio=10 os_prio=31 tid=0x00007fce0b84b800 nid=0x2b03 in Object.wait() [0x0000000119917000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x000000076002b488> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:157)
+	- locked <0x000000076002b488> (a java.lang.ref.Reference$Lock)
+
+"main" #1 prio=5 os_prio=31 tid=0x00007fce0b006000 nid=0xe07 runnable [0x0000000104c67000]
+   java.lang.Thread.State: RUNNABLE
+	at java.io.FileInputStream.read0(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:207)
+	at jline.internal.NonBlockingInputStream.read(NonBlockingInputStream.java:248)
+	at jline.internal.InputStreamReader.read(InputStreamReader.java:261)
+	- locked <0x00000007a826c1e0> (a jline.internal.NonBlockingInputStream)
+	at jline.internal.InputStreamReader.read(InputStreamReader.java:198)
+	- locked <0x00000007a826c1e0> (a jline.internal.NonBlockingInputStream)
+	at jline.console.ConsoleReader.readCharacter(ConsoleReader.java:2038)
+	at jline.console.ConsoleReader.readLine(ConsoleReader.java:2242)
+	at jline.console.ConsoleReader.readLine(ConsoleReader.java:2162)
+	at sbt.JLine.sbt$JLine$$readLineDirectRaw(LineReader.scala:45)
+	at sbt.JLine$$anonfun$readLineDirect$2.apply(LineReader.scala:37)
+	at sbt.JLine$$anonfun$readLineDirect$2.apply(LineReader.scala:37)
+	at sbt.Signals0.withHandler(Signal.scala:87)
+	at sbt.Signals$.withHandler(Signal.scala:13)
+	at sbt.JLine.readLineDirect(LineReader.scala:37)
+	at sbt.JLine.readLineWithHistory(LineReader.scala:30)
+	at sbt.JLine.sbt$JLine$$unsynchronizedReadLine(LineReader.scala:20)
+	at sbt.JLine$$anonfun$readLine$1.apply(LineReader.scala:17)
+	at sbt.JLine$$anonfun$readLine$1.apply(LineReader.scala:17)
+	at sbt.JLine$$anonfun$withJLine$1.apply(LineReader.scala:118)
+	at sbt.JLine$$anonfun$withJLine$1.apply(LineReader.scala:116)
+	at sbt.JLine$.withTerminal(LineReader.scala:92)
+	- locked <0x00000007a8084df8> (a jline.UnixTerminal)
+	- locked <0x00000007a82db528> (a sbt.JLine$)
+	at sbt.JLine$.withJLine(LineReader.scala:116)
+	at sbt.JLine.readLine(LineReader.scala:17)
+	at sbt.BasicCommands$$anonfun$shell$1.apply(BasicCommands.scala:167)
+	at sbt.BasicCommands$$anonfun$shell$1.apply(BasicCommands.scala:163)
+	at sbt.Command$$anonfun$command$1$$anonfun$apply$1.apply(Command.scala:31)
+	at sbt.Command$$anonfun$command$1$$anonfun$apply$1.apply(Command.scala:31)
+	at sbt.Command$.process(Command.scala:95)
+	at sbt.MainLoop$$anonfun$1$$anonfun$apply$1.apply(MainLoop.scala:100)
+	at sbt.MainLoop$$anonfun$1$$anonfun$apply$1.apply(MainLoop.scala:100)
+	at sbt.State$$anon$1.process(State.scala:179)
+	at sbt.MainLoop$$anonfun$1.apply(MainLoop.scala:100)
+	at sbt.MainLoop$$anonfun$1.apply(MainLoop.scala:100)
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:18)
+	at sbt.MainLoop$.next(MainLoop.scala:100)
+	at sbt.MainLoop$.run(MainLoop.scala:93)
+	at sbt.MainLoop$$anonfun$runWithNewLog$1.apply(MainLoop.scala:71)
+	at sbt.MainLoop$$anonfun$runWithNewLog$1.apply(MainLoop.scala:66)
+	at sbt.Using.apply(Using.scala:25)
+	at sbt.MainLoop$.runWithNewLog(MainLoop.scala:66)
+	at sbt.MainLoop$.runAndClearLast(MainLoop.scala:49)
+	at sbt.MainLoop$.runLoggedLoop(MainLoop.scala:33)
+	at sbt.MainLoop$.runLogged(MainLoop.scala:25)
+	at sbt.StandardMain$.runManaged(Main.scala:57)
+	at sbt.xMain.run(Main.scala:29)
+	at xsbt.boot.Launch$$anonfun$run$1.apply(Launch.scala:109)
+	at xsbt.boot.Launch$.withContextLoader(Launch.scala:129)
+	at xsbt.boot.Launch$.run(Launch.scala:109)
+	at xsbt.boot.Launch$$anonfun$apply$1.apply(Launch.scala:36)
+	at xsbt.boot.Launch$.launch(Launch.scala:117)
+	at xsbt.boot.Launch$.apply(Launch.scala:19)
+	at xsbt.boot.Boot$.runImpl(Boot.scala:44)
+	at xsbt.boot.Boot$.main(Boot.scala:20)
+	at xsbt.boot.Boot.main(Boot.scala)
+
+"VM Thread" os_prio=31 tid=0x00007fce0b849000 nid=0x2903 runnable 
+
+"GC task thread#0 (ParallelGC)" os_prio=31 tid=0x00007fce0a806000 nid=0x1607 runnable 
+
+"GC task thread#1 (ParallelGC)" os_prio=31 tid=0x00007fce0a809800 nid=0x2313 runnable 
+
+"GC task thread#2 (ParallelGC)" os_prio=31 tid=0x00007fce0a80a800 nid=0x2503 runnable 
+
+"GC task thread#3 (ParallelGC)" os_prio=31 tid=0x00007fce0b807800 nid=0x2703 runnable 
+
+"VM Periodic Task Thread" os_prio=31 tid=0x00007fce0b005000 nid=0x4903 waiting on condition 
+
+JNI global references: 292
+
